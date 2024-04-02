@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody cdkDropList (cdkDropListDropped)="drop($event)">
+            <tr style="cursor: pointer;" *ngFor="let person of data">
+                <th scope="row">{{person.id}}</th>
+                <td cdkDrag class="bg-dark text-light">{{person.employee_name}}</td>
+                <td>{{person.employee_salary | number}}</td>
+                <td>{{person.employee_age}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
